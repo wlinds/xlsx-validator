@@ -1,0 +1,11 @@
+version: '3'
+services:
+  app:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./src:/app
+    environment:
+      - LOG_FILE=/app/uploads.log
+    command: ["streamlit", "run", "app.py"]
